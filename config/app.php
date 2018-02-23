@@ -162,6 +162,7 @@ return [
 
         /*By me*/
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
 
     ],
 
