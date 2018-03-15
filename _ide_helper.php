@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.3 on 2018-02-19 21:15:15.
+ * Generated for Laravel 5.6.5 on 2018-03-01 19:36:45.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2121,6 +2121,19 @@ namespace Illuminate\Support\Facades {
         public static function component($path, $alias = null)
         {
             \Illuminate\View\Compilers\BladeCompiler::component($path, $alias);
+        }
+        
+        /**
+         * Register an include alias directive.
+         *
+         * @param string $path
+         * @param string $alias
+         * @return void 
+         * @static 
+         */ 
+        public static function include($path, $alias = null)
+        {
+            \Illuminate\View\Compilers\BladeCompiler::include($path, $alias);
         }
         
         /**
@@ -5504,6 +5517,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Set the loaded translation groups.
+         *
+         * @param array $loaded
+         * @return void 
+         * @static 
+         */ 
+        public static function setLoaded($loaded)
+        {
+            \Illuminate\Translation\Translator::setLoaded($loaded);
+        }
+        
+        /**
          * Set the parsed value of a key.
          *
          * @param string $key
@@ -7009,6 +7034,19 @@ namespace Illuminate\Support\Facades {
         public static function json($key = null, $default = null)
         {
             return \Illuminate\Http\Request::json($key, $default);
+        }
+        
+        /**
+         * Create a new request instance from the given Laravel request.
+         *
+         * @param \Illuminate\Http\Request $from
+         * @param \Illuminate\Http\Request|null $to
+         * @return static 
+         * @static 
+         */ 
+        public static function createFrom($from, $to = null)
+        {
+            return \Illuminate\Http\Request::createFrom($from, $to);
         }
         
         /**
@@ -13261,6 +13299,21 @@ namespace  {
             public static function mergeWheres($wheres, $bindings)
             {    
                 \Illuminate\Database\Query\Builder::mergeWheres($wheres, $bindings);
+            }
+         
+            /**
+             * Prepare the value and operator for a where clause.
+             *
+             * @param string $value
+             * @param string $operator
+             * @param bool $useDefault
+             * @return array 
+             * @throws \InvalidArgumentException
+             * @static 
+             */ 
+            public static function prepareValueAndOperator($value, $operator, $useDefault = false)
+            {    
+                return \Illuminate\Database\Query\Builder::prepareValueAndOperator($value, $operator, $useDefault);
             }
          
             /**
